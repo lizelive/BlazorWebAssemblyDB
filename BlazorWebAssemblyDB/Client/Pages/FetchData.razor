@@ -1,0 +1,31 @@
+﻿@page "/fetchdata"
+@using BlazorWebAssemblyDB.Shared
+@using Microsoft.EntityFrameworkCore
+@inject HttpClient Http
+@inject IDbContextFactory<ApplicationDbContext> ContextFactory
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (dbStatus == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @dbStatus
+}
+
+@code {
+    private string dbStatus;
+    protected override async Task OnInitializedAsync()
+    {
+        var forecastsRequest = Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast"); ;
+        using var context = ContextFactory.CreateDbContext();
+        var forecasts = await forecastsRequest;
+        await context.WeatherForecasts.AddRangeAsync(forecasts);
+        await context.SaveChangesAsync();
+        dbStatus = $"database now has {context.WeatherForecasts.Count()} weather events and is {context.Model.GetProductVersion()}";
+    }
+
+}
