@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>BlazorWebAssemblyDB</title>
     <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <!--#region blazorise-->
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
+    <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
+    <!--#endregion -->
+
     <link href="css/app.css" rel="stylesheet" />
     <link href="BlazorWebAssemblyDB.Client.styles.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
@@ -21,6 +28,13 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+    <!--#region blazorise-->
+    <script src="dist/jquery.slim.min.js"></script>
+    <script src="dist/umd/popper.min.js"></script>
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script src="_content/Blazorise/blazorise.js"></script>
+    <script src="_content/Blazorise.Bootstrap/blazorise.bootstrap.js"></script>
+    <!--#endregion -->
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>

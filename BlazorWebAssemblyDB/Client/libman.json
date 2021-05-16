@@ -1,0 +1,23 @@
+{
+  "defaultDestination": "wwwroot/dist/",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.6.0",
+      "files": [ "css/bootstrap.min.css", "js/bootstrap.bundle.min.js" ]
+    },
+    {
+      "library": "jquery@3.6.0",
+      "files": [ "jquery.slim.min.js" ]
+    },
+    {
+      "library": "popper.js@2.9.2",
+      "files": [ "umd/popper.min.js" ]
+    },
+    {
+      "library": "font-awesome@5.15.3",
+      "files": [ "css/fontawesome.min.css" ]
+    }
+  ],
+  "version": "1.0"
+}

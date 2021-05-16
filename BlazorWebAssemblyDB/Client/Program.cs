@@ -1,3 +1,6 @@
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 using BlazorWebAssemblyDB.Shared;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +20,20 @@ namespace BlazorWebAssemblyDB.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+            builder.Services
+              .AddBlazorise(options =>
+              {
+                  options.ChangeTextOnKeyPress = true;
+              })
+              .AddBootstrapProviders()
+              .AddFontAwesomeIcons();
+
+            builder.Services.AddSingleton(new HttpClient
+            {
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+            });
+
             builder.RootComponents.Add<App>("#app");
             builder.Services.AddDbContextFactory<ApplicationDbContext>(options => options.UseInMemoryDatabase("mindbase"));
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });

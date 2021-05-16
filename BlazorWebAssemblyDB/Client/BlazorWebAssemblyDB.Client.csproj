@@ -3,9 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <UserSecretsId>451b589a-a8fa-4d09-bae8-53fb1b364e3f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap" Version="0.9.3.6" />
+    <PackageReference Include="Blazorise.Components" Version="0.9.3.6" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.9.3.6" />
+    <PackageReference Include="Lucene.Net" Version="4.8.0-beta00014" />
+    <PackageReference Include="Lucene.Net.Memory" Version="4.8.0-beta00014" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.6" PrivateAssets="all" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.6" />
@@ -18,6 +24,10 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
 </Project>
