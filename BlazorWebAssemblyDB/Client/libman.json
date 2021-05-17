@@ -16,7 +16,7 @@
     },
     {
       "library": "font-awesome@5.15.3",
-      "files": [ "css/fontawesome.min.css" ]
+      "destination": "wwwroot/dist/font-awesome"
     }
   ],
   "version": "1.0"

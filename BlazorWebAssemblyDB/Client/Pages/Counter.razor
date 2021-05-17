@@ -2,6 +2,10 @@
 <h1>Search</h1>
 
 <p>Looking For @selectedSearchValue</p>
+
+
+<button @onclick="MagicUnicorn.Run">Do it.</button>
+
 <Autocomplete TItem="MySelectModel" TValue="string"
               Data="@myDdlData"
               TextField="@((item)=>item.MyTextField)"
